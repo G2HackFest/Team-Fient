@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personalized Diet Plan</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Personalized Diet Plan Generator</h1>
+        <form id="healthForm" action="/submit" method="POST">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="condition">Medical Condition:</label>
+            <input type="text" id="condition" name="condition" required>
+
+            <label for="weight">Weight (kg):</label>
+            <input type="number" id="weight" name="weight" required>
+
+            <button type="submit">Generate Diet Plan</button>
+        </form>
+
+        <div id="response"></div>
+    </div>
+
+    <script src="script.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            box-sizing: border-box;
+            
+        }
+
+        .container {
+            background: #fff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            width: 100%;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background-color: #d50c0c;
+        }
+
+        #response {
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+     <script>
+        document.getElementById('auth-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            document.getElementById('auth-section').style.display = 'none';
+            document.getElementById('health-data-section').style.display = 'block';
+        });
+
+        document.getElementById('health-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            document.getElementById('health-data-section').style.display = 'none';
+            document.getElementById('diet-plan-section').style.display = 'block';
+            document.getElementById('chatbot-section').style.display = 'block';
+
+            document.getElementById('diet-plan').innerText = 'Sample Diet Plan: Breakfast - Oats, Lunch - Grilled Chicken, Dinner - Salad';
+        });
+
+        document.getElementById('send-chat').addEventListener('click', function() {
+            const chatInput = document.getElementById('chat-input');
+            const chatWindow = document.getElementById('chat-window');
+
+            if (chatInput.value.trim() !== '') {
+                const userMessage = document.createElement('p');
+                userMessage.textContent = 'You: ' + chatInput.value;
+                chatWindow.appendChild(userMessage);
+
+                const botMessage = document.createElement('p');
+                botMessage.textContent = 'Bot: I am here to help you with your diet plan.';
+                chatWindow.appendChild(botMessage);
+
+                chatInput.value = '';
+                chatWindow.scrollTop = chatWindow.scrollHeight;
+            }
+        });
+
+        document.getElementById('export-list').addEventListener('click', function() {
+            alert('Shopping list exported!');
+        });
+    </script>
+</body>
+</html>

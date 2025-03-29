@@ -1,0 +1,83 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f0f2f5;
+    background-image: url('uploads/dietplan.jpg');
+   background-size: cover;      /* Resize to cover entire container */
+   background-repeat: no-repeat; /* Prevent tiling */
+   background-position: center; 
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.sections {
+    display: flex;
+    gap: 20px;
+}
+
+.form-section, .chat-section {
+    flex: 1;
+    padding: 15px;
+}
+
+input, select, button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+button {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:disabled {
+    background: #cccccc;
+}
+
+.hidden {
+    display: none;
+}
+
+#chatMessages {
+    height: 300px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    overflow-y: auto;
+}
+
+.user-message {
+    background: #e3f2fd;
+    padding: 10px;
+    margin:15px 0;
+    border-radius: 4px;
+}
+
+.bot-message {
+    background: #f1f1f1;
+    padding: 8px;
+    margin: 5px 0;
+    border-radius: 4px;
+}
+
+.chat-input {
+    display: flex;
+    gap: 10px;
+}
+
+.chat-input input {
+    flex: 1;
+}

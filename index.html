@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diet Plan Generator</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Diet Plan Generator</h1>
+        
+        <div class="sections">
+            <div class="form-section">
+                <h2>Create Your Plan</h2>
+                <form id="dietForm">
+                    <input type="text" id="username" placeholder="Username" required>
+                    <select id="condition" required>
+                        <option value="">Select Condition</option>
+                        <option value="diabetes">Diabetes</option>
+                        <option value="weight-loss">Weight Loss</option>
+                    </select>
+                    <input type="number" id="weight" placeholder="Weight (kg)" required>
+                    <button type="submit">Generate Plan</button>
+                </form>
+                <div id="planResult" class="hidden">
+                    <h3>Your Plan</h3>
+                    <div id="planOutput"></div>
+                    <h4>Meals</h4>
+                    <div id="mealsOutput"></div>
+                    <h4>Shopping List</h4>
+                    <ul id="shoppingOutput"></ul>
+                </div>
+            </div>
+            
+            <div class="chat-section">
+                <h2>Nutrition Chat</h2>
+                <div id="chatMessages"></div>
+                <div class="chat-input">
+                    <input type="text" id="userMessage" placeholder="Ask about nutrition...">
+                    <button id="sendBtn">Send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
